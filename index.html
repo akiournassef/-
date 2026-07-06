@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>نظام الإبلاغ عن المخاطر</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">🦺</div>
+
+    <h1>نظام الإبلاغ عن المخاطر</h1>
+
+    <p>
+        مديرية جهة طنجة تطوان الحسيمة
+    </p>
+
+</header>
+
+<div class="container">
+
+<form id="riskForm">
+
+<h2>الإبلاغ عن خطر</h2>
+
+<label>الاسم</label>
+
+<input
+type="text"
+id="name"
+placeholder="أدخل اسمك"
+required>
+
+<label>المصلحة</label>
+
+<input
+type="text"
+id="department"
+placeholder="مثال: الموارد البشرية">
+
+<label>مكان الخطر</label>
+
+<input
+type="text"
+id="location"
+placeholder="مكان وجود الخطر"
+required>
+
+<label>نوع الخطر</label>
+
+<select id="type" required>
+
+<option value="">اختر نوع الخطر</option>
+
+<option>خطر كهربائي</option>
+
+<option>خطر حريق</option>
+
+<option>انزلاق أو سقوط</option>
+
+<option>تسرب مياه</option>
+
+<option>معدات تالفة</option>
+
+<option>مشكلة في الإنارة</option>
+
+<option>عائق في الممر</option>
+
+<option>أخرى</option>
+
+</select>
+
+<label>درجة الخطورة</label>
+
+<div class="severity">
+
+    <input type="radio" id="low" name="severity" value="منخفضة" required>
+    <label for="low" class="low">🟢 منخفضة</label>
+
+    <input type="radio" id="medium" name="severity" value="متوسطة">
+    <label for="medium" class="medium">🟠 متوسطة</label>
+
+    <input type="radio" id="high" name="severity" value="مرتفعة">
+    <label for="high" class="high">🔴 مرتفعة</label>
+
+</div>
+
+<label>وصف الخطر</label>
+
+<textarea
+id="description"
+rows="5"
+placeholder="اشرح الخطر الذي شاهدته"
+required></textarea>
+
+<label>صورة الخطر</label>
+
+<label for="photo" class="upload-box">
+
+    <div class="upload-icon">📷</div>
+
+    <div class="upload-text">
+        اضغط لإضافة صورة
+    </div>
+
+    <small>
+        JPG - PNG
+    </small>
+
+</label>
+
+<input
+type="file"
+id="photo"
+accept="image/*"
+capture="environment"
+hidden>
+
+<img id="preview">
+
+<button type="submit">
+
+إرسال البلاغ
+
+</button>
+
+</form>
+
+</div>
+
+<footer>
+
+© 2026
+
+<br>
+
+نظام الإبلاغ عن المخاطر
+
+</footer>
+
+<script src="config.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script src="app.js"></script>
+
+<div id="successPopup" class="popup">
+
+    <div class="popup-box">
+
+        <div class="check">
+
+            ✅
+
+        </div>
+
+        <h2>
+
+            تم إرسال البلاغ
+
+        </h2>
+
+        <p>
+
+            شكراً لمساهمتك في تحسين السلامة.
+
+        </p>
+
+        <button onclick="closePopup()">
+
+            حسناً
+
+        </button>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
